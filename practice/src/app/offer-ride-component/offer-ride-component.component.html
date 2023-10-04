@@ -1,0 +1,57 @@
+<div class="container">
+    <form [formGroup]="regitsterRide">
+        <h1>RegitsterRide</h1>
+    <div class="form-group">
+        <label for="Name">Name:</label>
+        <input  class="form-control" type="text" formControlName="Name">
+        <div *ngIf="regitsterRide.controls['Name'].errors" class="alert alert-danger">
+            Invalid  Name.
+        </div>
+        <span *ngIf="regitsterRide.controls['Name'].errors?.['required']" class="alert alert-danger">Invalid</span>
+    </div>
+
+
+    <div class="form-group">
+        <label for="StartLocation">StartLocation:</label>
+        <input  class="form-control" type="text" formControlName="StartLocation">
+        <div *ngIf="regitsterRide.controls['StartLocation'].errors" class="alert alert-danger">
+            Invalid  location.
+        </div>
+        <span *ngIf="regitsterRide.controls['StartLocation'].errors?.['required']" class="alert alert-danger">Invalid</span>
+    </div>
+
+    <div class="form-group">
+        <label for="Destination">Destination:</label>
+        <input  class="form-control" type="text" formControlName="Destination">
+        <span *ngIf="regitsterRide.controls['Destination'].errors" class="alert alert-danger">
+            Invalid Destination.
+        </span>
+        <span *ngIf="regitsterRide.controls['Destination'].errors?.['destination']" class="alert alert-danger">Invalid</span>
+
+    </div>
+    <div class="form-group">
+        <label for="firstName">Car:</label>
+        <input  class="form-control" type="text" formControlName="Car">
+        <div *ngIf="regitsterRide.controls['Car'].errors" class="alert alert-danger">
+            Invalid car
+        </div>
+        <span *ngIf="regitsterRide.controls['Car'].errors?.['required']" class="alert alert-danger">Invalid</span>
+    </div>
+    <div class="form-group">
+        <label for="SeatsAvaible">Seats Availiable:</label>
+        <input  class="form-control" type="text" formControlName="SeatsAvaible">
+        <span *ngIf="regitsterRide.controls['SeatsAvaible'].errors" class="alert alert-danger">
+            Invalid email.
+        </span>
+        <span *ngIf="regitsterRide.controls['SeatsAvaible'].errors?.['required']" class="alert alert-danger">Invalid</span>
+        <span *ngIf="regitsterRide.controls['SeatsAvaible'].errors?.['seatsisInvalid']" class="alert alert-danger">{{regitsterRide.controls['SeatsAvaible'].errors?.['seatsisInvalid'].message}}</span>
+        <span *ngIf="regitsterRide.controls['SeatsAvaible'].dirty&&regitsterRide.controls['SeatsAvaible'].pristine"></span>
+        {{regitsterRide.touched}}
+      </div>
+
+
+
+
+</form>
+</div>
+
