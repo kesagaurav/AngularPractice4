@@ -7,13 +7,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { Logincomponet2Component } from './logincomponet2/logincomponet2.component';
 import { OfferRideComponentComponent } from './offer-ride-component/offer-ride-component.component';
+import { GauravFormsComponent } from './gaurav-forms/gaurav-forms.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponentComponent,
     Logincomponet2Component,
-    OfferRideComponentComponent
+    OfferRideComponentComponent,
+    GauravFormsComponent
   ],
   imports: [
     BrowserModule,
