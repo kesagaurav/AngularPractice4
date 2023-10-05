@@ -40,3 +40,15 @@ d.sort((a,b)=>{
     }
 });
 console.log(d);
+
+
+const newArr=[1,2,...c];//spread operator
+console.log(newArr);
+
+const join=[...arr,...b];
+console.log(join);
+
+//spread-> right side of= operator.
+
+const [e,f,...gaurav]=[1,2,3,4,5];
+console.log(e,f,gaurav);
