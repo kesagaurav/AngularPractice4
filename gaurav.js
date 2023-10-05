@@ -49,6 +49,6 @@ const join=[...arr,...b];
 console.log(join);
 
 //spread-> right side of= operator.
-
+// rest -> left side of operator.
 const [e,f,...gaurav]=[1,2,3,4,5];
 console.log(e,f,gaurav);
