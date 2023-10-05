@@ -40,12 +40,12 @@
     <div class="form-group">
         <label for="SeatsAvaible">Seats Availiable:</label>
         <input  class="form-control" type="text" formControlName="SeatsAvaible">
-        <span *ngIf="regitsterRide.controls['SeatsAvaible'].errors" class="alert alert-danger">
+        <span class="text-danger" *ngIf="regitsterRide.controls['SeatsAvaible'].errors" class="alert alert-danger">
             Invalid email.
         </span>
-        <span *ngIf="regitsterRide.controls['SeatsAvaible'].errors?.['required']" class="alert alert-danger">Invalid</span>
-        <span *ngIf="regitsterRide.controls['SeatsAvaible'].errors?.['seatsisInvalid']" class="alert alert-danger">{{regitsterRide.controls['SeatsAvaible'].errors?.['seatsisInvalid'].message}}</span>
-        <span *ngIf="regitsterRide.controls['SeatsAvaible'].dirty&&regitsterRide.controls['SeatsAvaible'].pristine"></span>
+        <span class="text-danger" *ngIf="regitsterRide.controls['SeatsAvaible'].errors?.['required']" class="alert alert-danger">Invalid</span>
+        <span class="text-danger"*ngIf="regitsterRide.controls['SeatsAvaible'].errors?.['seatsisInvalid']" class="alert alert-danger">{{regitsterRide.controls['SeatsAvaible'].errors?.['seatsisInvalid'].message}}</span>
+        <span class="text-danger"*ngIf="regitsterRide.controls['SeatsAvaible'].dirty&&regitsterRide.controls['SeatsAvaible'].pristine"></span>
         {{regitsterRide.touched}}
       </div>
 
