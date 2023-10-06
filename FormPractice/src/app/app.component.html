@@ -1,7 +1,32 @@
-<div class="container">
+<!-- <div class="container">
   <h1>EmployeeRegistrationForm</h1>
-
+<nav class="navbar navbar-expand-lg bg-dark">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/employee">employee</a>
+  </li>
+</nav>
 </div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div> -->
 
 
-<app-employee-register></app-employee-register>
+<nav class="navbar navbar-light bg-primary">
+  <div class="container">
+    <div class="navabar-header navabar-collapse collapse">
+      <a class="navbar-brand" routerLink="employee">Employee</a>
+    </div>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-link" routerLink="/template">TemplateDemo</li>
+      <li class="nav-link" routerLink="/pipe">PipeDemo</li>
+
+
+    </ul>
+  </div>
+
+</nav>
+
+<router-outlet></router-outlet>
+
+
+

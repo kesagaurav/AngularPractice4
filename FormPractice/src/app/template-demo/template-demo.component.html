@@ -1,0 +1,77 @@
+<div class="container">
+  <p class="text-success" id="template">hey i am in template demo</p>
+</div>
+
+<div class="container">
+  <!--style/event binding binding-->
+  <h3 [style.color]="'isValid' ? 'blue':'green'">Template Demo</h3>
+  <h1  class="text-success">name:{{name}}</h1>
+  <button class="btn btn-primary" (click)="courseName()">click here to chnage the text</button>
+
+</div>
+{{'textas' + 6 + 7 + 8}}
+
+<div class="container">
+  <h3>interpolation demo</h3>
+  <h3>{{name2}}</h3>
+</div>
+
+
+<!--two way databinding-->
+<div class="container">
+  <h3>two way databinding demo</h3>
+  <input  type="text" [(ngModel)]="name2">
+  <h3>Hello,{{name2}}</h3>
+</div>
+
+
+
+<div class="container">
+  <h3>two way databinding demo 2</h3>
+ enter an book number to search: <input  type="text" [(ngModel)]="name3">
+  <h3>you are searching for :{{name3}}</h3>
+</div>
+
+
+
+
+<div class="container">
+  <h3>two way databinding demo 3</h3>
+  <input  type="number" #year>show me the year
+  <button (click)="onSubmit(year.value)">search</button>
+  <h3>you are searching for :{{birthyear}}</h3>
+</div>
+
+
+
+
+
+
+
+<div class="container">
+  <h3>two way databinding demo 4</h3>
+  <input   type="text" [(ngModel)]="color">
+<p [style.color]="color">paint the {{color}}</p>
+</div>
+
+
+
+
+
+<div class="container">
+  <p appMessage>style me with basic directive</p>
+  <p [appBetter]="'red'" [defaultColor]="'yellow'">style me with basic directive</p><!--better approach using renderer-->
+
+</div>
+
+<div class="container">
+  <p> from the practice directive creating on my own</p>
+  <p [appPractice]="'red'" [defaultColor]="'violet'">style my directive!</p>
+</div>
+
+
+
+<div class="container">
+  <p> from the practice2 directive creating on my own</p>
+  <p [appPractice2]="myMessage">click here</p>
+</div>

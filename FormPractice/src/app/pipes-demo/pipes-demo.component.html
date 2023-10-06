@@ -1,0 +1,94 @@
+<div class="container">
+  <h3 class="text-success">Hello,Welcome to pipes demo</h3>
+</div>
+
+<div class="container">
+  uppercase:{{'laptop'|uppercase}}
+  uppercase:{{name|uppercase}}
+</div>
+
+<div class="container">
+  lowecase:{{'WATCH' | lowercase}}
+  lowercase:{{name2|lowercase}}
+</div>
+
+
+<div class="container">
+  titlecase:{{'WATCH' | titlecase}}
+  titlecase:{{name2|titlecase}}
+  titlecase:{{'kesa gaurav'|titlecase}}
+
+</div>
+
+
+
+<div class="container">
+  currency:{{1| currency}}
+  currency: {{1.25 | currency}}
+  curreny:{{250000 |currency:'CAD':'symbol':'6.3'}}
+  curreny:{{250000 |currency:'CAD':'symbol':'6.3'}}
+  curreny:{{250000 |currency:'CAD':'code'}}
+
+</div>
+
+
+<div class="container">
+  slice : {{'gaurav' | slice:2}}
+  slice : {{['a','b','c','d','e','f'] | slice:1:3}}
+  slice:{{'laptop charger'|slice:-4}}
+  slice:{{'laptop charger'|slice:-4:-2}}
+
+</div>
+
+
+
+<div class="container">
+  productcode:{{productCode | slice:5:9}}
+  productname:{{productName| uppercase}}
+  <p *ngIf="productPrice">
+    <strong>prodcutprice:</strong>
+    price:{{price | currency:'USD':'symbol'}}
+  </p>
+  <p *ngIf="!productPrice">
+    <strong>prodcutprice:</strong>
+    price:{{price | currency:'CAD':'symbol'}}
+  </p>
+ <button [ngStyle]="{border:btnUsdBorder}" class="btn btn-secondary my-2" (click)="btnUsd()">
+  USD
+ </button>
+ <button [ngStyle]="{border:btnCadBorder}" class="btn btn-secondary my-2" (click)="btnCad()">
+  CAD
+ </button>
+</div>
+
+
+
+
+
+<h2>Sorting Products list using custom pipe</h2>
+Sort the list based on
+<select [(ngModel)]="sortoption">
+  <option value="prodName">Product Name</option>
+  <option value="price">Price</option>
+</select>
+<br /><br />
+<table border="1">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let products of productsList | pipeDemo: sortoption">
+      <td>{{ products.productName }}</td>
+      <td>{{ products.price }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2>pipe demo 2</h2>
+<div class="container">
+  <h1>{{firstName | demo:lastName}}</h1>
+</div>
