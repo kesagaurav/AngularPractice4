@@ -1,0 +1,30 @@
+
+<h1>pipeDemos</h1>
+
+<div class="container">
+  {{'gaurav'|uppercase}}
+  {{'GAURAV'|lowercase}}
+  {{'gaurav'|titlecase}}
+</div>
+
+<div class="container" >
+  <h1 class="text-success">Slice concept in pipe</h1>
+  {{'gaurav'| slice:2:6}}
+  {{'deepa' | slice:3}}
+  {{name | slice:4:9}}
+</div>
+
+<div class="container">
+  <h1 class="text-primary">currency concept</h1>
+  {{1000 | currency}}
+  {{1000 | currency:'CAD'}}
+  {{100000 | currency:'CAD':'symbol':'9.0'}}
+  {{100000 | currency:'INR':'symbol':'9.0'}}
+  {{100000 | currency:'RUB':'symbol':'9.0'}}
+  {{100000 | currency:'EUR':'symbol':'9.0'}}
+  {{100000 | currency:'JPY':'symbol':'9.0'}}
+
+
+
+
+</div>

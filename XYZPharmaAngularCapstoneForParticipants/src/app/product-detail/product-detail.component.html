@@ -1,0 +1,33 @@
+<div>
+  <div class="card" *ngFor="let product of productDetail">
+    <!-- code here to display the full details of the specific product as card -->
+
+      <div class="card-body">
+        <h5 class="card-header text-black" style="font-size:40px; float: inline-end;">{{product.name}}</h5>
+        <b>Slat Composition:</b>
+      <p style="position: 1px;">{{product.saltCompostion}}</p>
+      <b>About:</b>
+      <p class="card-group">{{product.about}}</p>
+      <b>Use:</b>
+      <p class="card-group">{{product.use}}</p>
+      <b>Side Effects:</b>
+      <p class="card-group">{{product.sideEffects}}</p>
+      </div>
+      <div class="card-footer">
+        Note:consumed as prescribed by physician
+      </div>
+
+
+  </div>
+
+</div>
+
+
+
+<!--
+<div class="card border-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body text-secondary">
+    <h5 class="card-title">Secondary card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div> -->

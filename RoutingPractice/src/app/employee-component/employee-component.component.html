@@ -1,0 +1,12 @@
+<p>employee_id is {{employee.id}}</p>
+<p>employee name is {{employee.name}}</p>
+<hr>
+<a [routerLink]="['/employees',19,'gaurav']">Load (19)</a>
+<!-- so the above routerlink when we add when we click on this link in the search bar
+it will show the values like /19/gaurav in search bar  with using params subscribe-->
+
+<div class="container">
+  <router-outlet></router-outlet>
+
+</div>
+

@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<div class="grid-container">
+    <div class="r1">
+        <div class="display-4">Quater Details</div>
+        <br>
+        <div class="qd">
+            Quarter Details available of:
+            <span class="badge">Q3 2018</span> &nbsp;
+            <span class="badge">Q4 2018</span> &nbsp;
+            <span class="badge">Q1 2019</span> &nbsp;
+            <span class="badge">Q2 2019</span> &nbsp;
+            <span class="badge">Q3 2019</span> &nbsp;
+            <span class="badge">Q4 2019</span> &nbsp;
+            <span class="badge">Q1 2020</span>
+        </div>
+
+        <!-- implement a reactive form that have two input fields and a button to collect the quater and financial year detail
+        <form>    </form> -->
+        <form [formGroup]="quaterFor">
+          <div class="form-group">
+            <label>Quarter:</label>
+            <input  type="text" formControlName="quater">
+            <label>FinacialYear:</label>
+            <input  type="text" formControlName="fyear">
+
+            <button class="btn btn-success text-right" (click)="getQDetails()">Get Details</button>
+          </div>
+
+
+
+        </form>
+
+    </div>
+    <!-- implement a table to show the details of the quater selected if the quater detail is available -->
+    <table class="table  table-bordered ">
+      <tbody>
+        <tr>
+          <th>Quater</th>
+          <th>Sales</th>
+          <th>Other Income</th>
+          <th>Gross Profit</th>
+          <th>Depriciation</th>
+          <th>Interest</th>
+          <th>Tax</th>
+          <th>Net Profit</th>
+        </tr>
+        <tr>
+          <!--<td>{{quaterInfo.quater}}</td>-->
+          <td>{{quaterInfo.result.sales}}</td>
+          <td>{{quaterInfo.result.otherIncome}}</td>
+          <td>{{quaterInfo.result. grossProfit}}</td>
+          <td>{{quaterInfo.result.Depreciation}}</td>
+          <td>{{quaterInfo.result.Interest}}</td>
+          <td>{{quaterInfo.result.Tax}}</td>
+          <td>{{quaterInfo.result.netProfit}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="showError" class="error">
+        <h4><span class="fas fa-cat"></span> {{errorMessage}}</h4>
+    </div>
+</div>

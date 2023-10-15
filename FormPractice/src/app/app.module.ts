@@ -14,6 +14,7 @@ import { BetterDirective } from './better.directive';
 import { UnlessDirective } from './unless.directive';
 import { PracticeDirective } from './practice.directive';
 import { Practice2Directive } from './practice2.directive';
+import { Practice3Directive } from './practice3.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { Practice2Directive } from './practice2.directive';
     BetterDirective,
     UnlessDirective,
     PracticeDirective,
-    Practice2Directive
+    Practice2Directive,
+    Practice3Directive
   ],
   imports: [
     BrowserModule,
