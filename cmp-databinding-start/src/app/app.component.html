@@ -1,0 +1,24 @@
+<div class="container">
+  <app-cockpit (serverCreated)="onServerAdded($event)"
+  (blueprintCreated)="onBlueprintAdded($event)"></app-cockpit>
+</div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change the firts element</button>
+      <button class="btn btn-danger" (click)="onDestoryFirst()">Destroy the firts element</button>
+      <div
+        class="panel panel-default">
+        <app-serverelement  *ngFor="let element of serverElements"
+        [gauravElement]="element"
+        [name]="element.name">
+        <p>
+          <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+          <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+        </p>
+      </app-serverelement><!--binding the name of the alias in the @input() in the server component.ts file-->
+
+      </div>
+    </div>
+  </div>
+

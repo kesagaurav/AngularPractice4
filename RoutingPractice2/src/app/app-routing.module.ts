@@ -7,6 +7,7 @@ import { PipeComponent } from './pipe/pipe.component';
 import { AuthGuardService } from './auth-guard.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { PracticeFormsComponent } from './practice-forms/practice-forms.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   ]},
   {path:'employee',component:EmployeeComponent},
   {path:'pipe',component:PipeComponent},
+  {path:'practice',component:PracticeFormsComponent},
   {path:'not-found',component:PageNotFoundComponent},
   {path:'**',redirectTo:'/not-found',pathMatch:'full'},
 

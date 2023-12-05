@@ -1,0 +1,38 @@
+<div class="container text-center text-primary">
+  <h3>Template Driven Form Practice</h3>
+</div>
+
+<div class="container">
+  <form (ngSubmit)="onSubmit()"  #d="ngForm">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input id="username" class="form-control" type="text" ngModel name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="mail">Mail:</label>
+      <input id="mail" class="form-control" type="email" ngModel name="email" required email>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input id="passowrd" class="form-control" type="text" ngModel name="password" required>
+    </div>
+    <div class="form-group">
+      <label>Gender:</label>
+     <select name="gender" id="gender" class="form-control" [ngModel]="genderDefault" name="gender" required>
+      <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+     </select>
+    </div><br/>
+    <button type="button"  class="btn btn-primary" [disabled]="!d.valid">Submit</button>
+  </form>
+
+</div>
+
+
+
+<div class="container" *ngIf="submitted">
+  <h3>Details of Employee are</h3>
+  <p>username is : {{gaurav.username}}</p>
+  <p>mail is :{{gaurav.mail}}</p>
+  <p>password is :{{gaurav.password}}</p>
+  <p>gender is :{{gaurav.gender}}</p>
+</div>

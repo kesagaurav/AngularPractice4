@@ -1,1 +1,115 @@
-<p>pipe works!</p>
+
+<h3 class="text-info text-center">Date Pipe Practice from scratch</h3>
+
+<hr/>
+
+<div class="container">
+<p>this is about year(y) practice</p>
+<!--in y 3 digits or 2gigits plus 0 will be added for {y,yy}-->
+<p>{{'2'|date:'yyyy'}}</p>
+<p>{{'2' | date:'yy'}}</p>
+</div>
+
+
+<div class="container">
+  <p>this is about Day of the month practice</p>
+  <!--in y 3 digits or 2gigits plus 0 will be added for {y,yy}-->
+  <p>{{'2'|date:'d'}}</p>
+  <p>{{'2' | date:'dd'}}</p>
+  </div>
+
+<div class="container">
+  <p>this is about year(Y) practice</p>
+  <!--in y 3 digits or 2gigits plus 0 will be added for {y,yy}-->
+  <p>{{'2'|date:'Y'}}</p>
+  <p>{{'2'|date:'YY'}}</p>
+  <p>{{'2'|date:'YYY'}}</p>
+  <p>{{'2'|date:'YYYY'}}</p>
+
+  </div>
+
+
+
+
+  <div class="container">
+    <p>this is about month practice</p>
+    <!--in y 3 digits or 2gigits plus 0 will be added for {y,yy}-->
+    <p>{{'9'|date:'M'}}</p>
+    <!-- it will give only numbers like 01,02---12-->
+    <p>{{'2'|date:'MM'}}</p>
+    <!--it will give 3 charcters of a month-->
+    <p>{{'2'|date:'MMM'}}</p>
+    <!--it will be the full name of the month-->
+    <p>{{'2'|date:'MMMM'}}</p>
+
+    </div>
+
+
+
+    <div class="container">
+      <p>this is about weekday practice</p>
+      <!--in y 3 digits or 2gigits plus 0 will be added for {y,yy}-->
+      <p>{{'2'|date:'E'}}</p>
+      <p>{{'2'|date:'EE'}}</p>
+      <p>{{'2'|date:'EEE'}}</p>
+      <p>{{'2'|date:'EEEE'}}</p>
+      <p>{{'2'|date:'EEEEE'}}</p>
+      <p>{{'2'|date:'EEEEEE'}}</p>
+
+      </div>
+
+
+<div class="container">
+  <h1>practice</h1>
+ <p>{{'1/31/2023' | date:'M/d/yy'}}</p>
+</div>
+
+
+
+<div class="container">
+  <p>this is about day of month practice</p>
+  <!--in y 3 digits or 2gigits plus 0 will be added for {y,yy}-->
+  <p>{{'01/2/2023'|date:'MMM/d/yyyy'}}</p>
+  </div>
+
+
+
+
+  <div class="container">
+    <p>this is about day of month practice</p>
+    <!--in y 3 digits or 2gigits plus 0 will be added for {y,yy}-->
+    <p>{{'02/23/2023'|date:'MMM/d/yyyy'}}</p>
+    </div>
+
+
+
+  <div class="container">
+    <p>this is about day of month practice</p>
+    <!--in y 3 digits or 2gigits plus 0 will be added for {y,yy}-->
+    <p>{{'02,23,2023'|date:'MMMM,d,yyyy'}}</p>
+    </div>
+
+
+  <div class="container">
+    <p>this is about day of month practice</p>
+    <!--in y 3 digits or 2gigits plus 0 will be added for {y,yy}-->
+    <p>{{'02 23,2023'|date:'MMMM d,yyyy'}}</p>
+    </div>
+
+
+    <div class="container">
+      <p>this is about day of month practice</p>
+      <!--in y 3 digits or 2gigits plus 0 will be added for {y,yy}-->
+      <p>{{'02 /23,2023'|date:'MMMM /d,yyy'}}</p>
+      </div>
+
+
+      <div class="container">
+        <p>this is about day of month practice</p>
+        <!--in y 3 digits or 2gigits plus 0 will be added for {y,yy}-->
+        <p>{{'11:54:00 AM'|date:'h:mm:ss a'}}</p>
+        </div>
+
+        <div>
+          {{'special'|slice:1:3}}
+        </div>

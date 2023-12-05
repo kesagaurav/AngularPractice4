@@ -1,0 +1,30 @@
+
+<div class="container">
+  <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="projectName">ProjectName</label>
+        <input id="projectName" class="form-control" type="text" name="projectName" formControlName="projectName">
+      </div>
+      <div class="form-group">
+        <label for="Mail">Mail</label>
+        <input id="Mail" class="form-control" type="email" name="Mail" formControlName="Mail">
+      </div>
+      <div>
+        <label for="projectStatus">ProjectStatus</label>
+        <select class="form-control" formControlName="projectStatus">
+          <option *ngFor="let item of status" [value]="item">{{item}}</option>
+
+        </select>
+        <br/>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+  </form>
+</div>
+
+
+<div class="container" [hidden]="!submitted">
+  <h1>The Project Details are</h1>
+  <p>Project name is :{{projectForm.get('projectName')?.value}}</p>
+  <p>Mail is :{{projectForm.get('Mail')?.value}}</p>
+  <p>Project status is :{{projectForm.get('projectStatus')?.value}}</p>
+</div>

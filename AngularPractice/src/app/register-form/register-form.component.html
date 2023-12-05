@@ -1,0 +1,42 @@
+<div class="container">
+  <h3 class="text-success text-center">Register form</h3>
+</div>
+
+
+<h2 class="text-center">Details of the register forms</h2>
+<div class="container">
+
+<form [formGroup]="registerForm">
+  <div class="form-group">
+    <label for="firstName">FirtsName</label>
+    <input id="firstName" class="form-control" type="text" formControlName="firstName">
+    <span class="alert alert-danger" *ngIf="registerForm.controls['firstName'].errors">FirstName is invalid</span>
+    <span class="alert alert-danger" *ngIf="registerForm.controls['firstName'].errors?.['required']">FirstName is required</span>
+    <span class="alert alert-danger" *ngIf="registerForm.controls['firstName'].errors?.['min']">Min value is 6</span>
+  </div>
+  <div class="form-group">
+    <label for="lastName">LastName</label>
+    <input id="lastName" class="form-control" type="text" formControlName="lastName">
+    <span class="alert alert-danger" *ngIf="registerForm.controls['lastName'].errors">FirstName is invalid</span>
+    <span class="alert alert-danger" *ngIf="registerForm.controls['lastName'].errors?.['required']">FirstName is required</span>
+  </div>
+  <div class="form-group">
+    <label for="email">email</label>
+    <input id="email" class="form-control" type="email" formControlName="email">
+    <span class="alert alert-danger" *ngIf="registerForm.controls['email'].errors">email is invalid</span>
+    <span class="alert alert-danger" *ngIf="registerForm.controls['email'].errors?.['required']">email is required</span>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input id="password" class="form-control" type="password" formControlName="password">
+    <span class="alert alert-danger" *ngIf="registerForm.controls['password'].errors">password is invalid</span>
+    <span class="alert alert-danger" *ngIf="registerForm.controls['password'].errors?.['required']">password is required</span>
+  </div>
+  <div class="form-group">
+    <label for="phone">phone</label>
+    <input id="phone" class="form-control" type="text" formControlName="phone">
+    <span class="alert alert-danger" *ngIf="registerForm.controls['phone'].errors">phone is invalid</span>
+    <span class="alert alert-danger" *ngIf="registerForm.controls['phone'].errors?.['required']">phone is required</span>
+  </div>
+</form>
+</div>

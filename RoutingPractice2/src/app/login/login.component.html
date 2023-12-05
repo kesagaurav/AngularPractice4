@@ -2,8 +2,79 @@
   <h1>login form</h1>
 </div>
 
+<div class="container">
+  <form (ngSubmit)="onUserSubmit()" #f="ngForm">
+
+    <div class="form-group">
+      <label for="username">Name</label>
+      <input id="username" class="form-control" type="text" ngModel name="username" required>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="suggetUserName()">submit</button>
+
+    <div class="form-group">
+      <label for="email">email</label>
+      <input id="email" class="form-control" type="email" ngModel name="email" required email>
+    </div><br/>
+    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">submit</button>
+  </form>
+</div>
+
+<br/>
+
+
+
+<div class="container" *ngIf="submitted">
+  <h1>Your Data</h1>
+  <p>username is :{{user.name}}</p>
+  <p>email is :{{user.email}}</p>
+</div>
+
+
+
 
 <div class="container">
   <button class="btn btn-primary" (click)="onLogin()">Login</button>
   <button class="btn btn-primary" (click)="onLogout()">Logout</button>
+</div>
+
+
+
+<br/>
+<br/>
+
+
+<div class="container">
+<h1>Practice template driven approach in forms</h1>
+<form (ngSubmit)="onSubmitForm()" #g="ngForm">
+  <div class="form-group">
+    <label for="email">email</label>
+    <input id="email" class="form-control" type="email" ngModel name="email" required email #email="ngModel">
+  </div>
+  <span class="text-danger" *ngIf="email.invalid && email.touched">plz enter an valid email</span>
+  <br/>
+  <label>Subscriptions:</label>
+  <select id="subscriptions" class="form-control" name="subscriptions" [ngModel]="advanced">
+    <option value="Basic">Basic</option>
+    <option value="Advanced">Advanced</option>
+    <option value="Pro">Pro</option>
+  </select>
+
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input id="password" class="form-control" type="password" ngModel name="password" required password #password="ngModel">
+  </div>
+  <span class="text-danger" *ngIf="password.invalid && password.touched">plz enter an valid passowrd</span>
+
+  <button class="btn btn-primary" [disabled]="!g.valid">submit</button>
+
+</form>
+
+<div class="container" *ngIf="submitted1">
+  <h1 class="text-primary">Your Data</h1>
+  <p>email is : {{gaurav.email}}</p>
+  <p>password is : {{gaurav.password}}</p>
+  <p>subscription is  : {{gaurav.subscriptions}}</p>
+
+</div>
+
 </div>

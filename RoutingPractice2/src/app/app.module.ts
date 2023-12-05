@@ -11,6 +11,8 @@ import { AuthGuardService } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PracticeFormsComponent } from './practice-forms/practice-forms.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,14 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     PipeComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    PracticeFormsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthGuardService,AuthService],
   bootstrap: [AppComponent]
