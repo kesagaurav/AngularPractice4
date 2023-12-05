@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from './book.service';
-import {of,from, range, max, filter, count, map, distinct, reduce, scan, last, first, startWith, endWith, interval, take, combineLatestAll,min, concatAll, concat, concatMap, merge} from 'rxjs';
+import {of,from, range, max, filter, count, map, distinct, reduce, scan, last, first, startWith, endWith, interval, take, combineLatestAll,min, concatAll, concat, concatMap, merge, combineLatest, defaultIfEmpty, every, find, findIndex, Subject, isEmpty} from 'rxjs';
 import { Book } from './book';
 
 @Component({
@@ -145,9 +145,98 @@ export class AppComponent implements OnInit{
 
     })
 
+    //startsWith
+    const gaurav=of('gaurav',"deepa","omkar","gauri").pipe(
+      startWith('gaurav')
+    ).subscribe(res=>{
+      console.log('starrts with ' + res);
+
+    })
+
+    //combine latest
+
+    const a1=of(1,2,3).pipe(max());
+    const b1=of(1,2,3).pipe(min());
+    combineLatest(a1,b1).subscribe(res=>console.log(" combine values are " + res)
+    )
+
+    const c1=of(1,2,3).pipe();
+    const x2=of(3,4,5).pipe();
+    combineLatest(c1,x2).subscribe(([res,res1])=>{
+      console.log(`res : ${res}`);
+      console.log(`res1:${res1}`);
 
 
+    })
 
+
+    //startswith
+    const source=of(1,2,3);
+    source.pipe(startWith(0)).subscribe(res=>{
+      console.log(res);
+
+    })
+
+    //default is empty
+    const empty=of().pipe(defaultIfEmpty("0"),startWith(0),endWith(1),endWith("gaurav"),startWith("kesa")).subscribe(res=>{
+      console.log(res);
+
+    })
+
+
+    //every for true case
+    const every1=of(2,4,6).pipe(every(a=>a%2==0)).subscribe(res=>{
+      console.log('even values with every operator ' + res);
+
+    })
+
+    //every for false case
+    const every2=of(2,4,7).pipe(every(a=>a%2==0)).subscribe(res=>{
+      console.log('even values with every operator ' + res);
+
+    })
+
+
+    //find
+    const hey=of(3,19,20,15).pipe(find(a=>a%5==0)).subscribe(res=>{
+      console.log('find operator in rxjs ' + res);//it will only give the first occurence of the values
+
+    })
+
+    //find if the value is not found
+
+    const hey1=of(3,19,21,22).pipe(find(a=>a%5==0)).subscribe(res=>{
+      console.log('find operator if the value is not found in rxjs ' + res);//it will only give the first occurence of the values
+
+    })
+
+
+    //findIndex
+
+    const hey3=of(3,19,21,15,20).pipe(findIndex(a=>a%5==0)).subscribe(res=>{
+      console.log('findIndex operator in rxjs ' + res);//it will only give the first index occurence of the values
+
+    })
+
+
+    //if findIndex index didnot found
+    const hey4=of(3,19,22,23).pipe(find(a=>a%5==0)).subscribe(res=>{
+      console.log('findIndex operator in rxjs ' + res);//it will only give the first occurence of the values
+
+    })
+
+    //isempty
+    const g1=new Subject<String>();
+    const g2=g1.pipe(isEmpty());
+
+    g1.next('1');
+    g1.next('2');
+    g1.next('3');
+    g1.complete();
+
+    g1.subscribe(res=>console.log(res));
+
+    g2.subscribe(res=>console.log(res));
 
   }
 
