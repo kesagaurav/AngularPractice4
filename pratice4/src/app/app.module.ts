@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgrxPracticeComponent } from './ngrx-practice/ngrx-practice.component';
+import { DemoPipe } from './demo.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NgrxPracticeComponent
+    DemoPipe
   ],
   imports: [
-    BrowserModule
-
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
